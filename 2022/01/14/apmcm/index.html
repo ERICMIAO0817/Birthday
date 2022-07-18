@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>亚太数模总结 | Gimdong</title><meta name="keywords" content="数模"><meta name="author" content="Eric Miao,1838040569@qq.com"><meta name="copyright" content="Eric Miao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大二上，获亚太区数学建模大赛一等奖。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="亚太数模总结">
+<meta property="og:url" content="http://example.com/2022/01/14/apmcm/index.html">
+<meta property="og:site_name" content="Gimdong">
+<meta property="og:description" content="大二上，获亚太区数学建模大赛一等奖。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-ne3oxl_1920x1080.png?versionId=CAEQFhiBgMDrwLKI_hciIDJiZDYxMmE3NDMxNDQzYzlhN2I2ZmQwZjM1ZDQxYWFi">
+<meta property="article:published_time" content="2022-01-14T13:39:02.000Z">
+<meta property="article:modified_time" content="2022-07-17T18:11:54.083Z">
+<meta property="article:author" content="Eric Miao">
+<meta property="article:tag" content="数模">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-ne3oxl_1920x1080.png?versionId=CAEQFhiBgMDrwLKI_hciIDJiZDYxMmE3NDMxNDQzYzlhN2I2ZmQwZjM1ZDQxYWFi"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/01/14/apmcm/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?hm.src = "https://hm.baidu.com/hm.js?c38d2c39cb578ef8cd93f733212f453e";";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '亚太数模总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-18 02:11:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Gimdong" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://4myblog.oss-cn-beijing.aliyuncs.com/img/61.png?versionId=CAEQFhiBgMCv_KSI_hciIGJkNmYxOTliNzlhNTQ3MzJiZjQyNzU2YTMyZmY1ODNj')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Gimdong</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">亚太数模总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-14T13:39:02.000Z" title="发表于 2022-01-14 21:39:02">2022-01-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-17T18:11:54.083Z" title="更新于 2022-07-18 02:11:54">2022-07-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%AF%94%E8%B5%9B%E7%BB%8F%E5%8E%86/">比赛经历</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="亚太数模总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ol>
+<li><p>组队</p>
+<p>不论是什么比赛，团队是我认为最重要的key factor。对于一项我比较重视的比赛，我往往会选择作为队长参加，因为我想自己选择我最信任的朋友来组队和奋斗。</p>
+<p>这里插一句题外话，我真的很感激一路上的合作伙伴们：写书的时候的李帕、冰糖、zang、juns、kouzong；服创时候的谌总、cyy、ruia、佳宁姐，后期加盟的林导林铁蛋；互联网+的时候被强势带飞的Jacob学长；亚太数模的cherish和ruia……感谢队友们对我的信任，也感谢很多人一路上不离不弃。</p>
+<p>说回亚太，一般来说，数模比赛的队友会是这么一个配置模式：</p>
+<p><strong>建模手(编程手亦可) * 1</strong></p>
+<p><strong>数学手(个人理解是出solution的人) * 1</strong></p>
+<p><strong>英语 * 1</strong></p>
+<p>当时我组队的时候也没想太多，比起按照配置<strong>对号入座</strong>，我认为还是能把话说到一块去的人更合适，于是找了熟悉且靠谱的朋友开干。其实整体做下来，感觉这个配置模式是可以灵活替换的，也并不是一个基准(当然，也很可能是因为我们都是第一次参加，比较混乱)。实际上我们队伍的实际情况是：</p>
+<p><em>Day 1：我和cherish是数学手思考solution，ruia做数据的收集</em></p>
+<p><em>Day 2：我和cherish是编程手，通宵把solution付诸实践，ruia变成论文手兼数据收集</em></p>
+<p><em>Day 3：ruia变成数学手，针对solution做modify，cherish继续编程建模，我变成论文手写摘要</em></p>
+<p><em>Day 4：ruia提出一个很有趣的解决方案，我又变成编程手实现，cherish写论文。</em></p>
+<p>所以实际上呢，职责是跳脱的，也是混乱的。从一个新手的角度出发，我还是鼓励大家从综合实力强合得来的朋友组队，第一次很难做到职责分明，所以需要大家都能时刻统一意见然后具有多面的解决问题的能力，及时帮忙救火。</p>
+</li>
+<li><p>前一个月</p>
+<p>没错，我们提前一个月就开始有一些规划。大抵是一个月或者是三个星期吧，记不太清楚。这是我当时认为很重要的事情，因为我们都是没有参加过数模比赛的小白，<strong>所以我认为需要对基础的一些模型进行涉猎和了解，对一些数学概念做基本的学习。</strong>于是当时我统计了一些很常见的在数模比赛中比较基础的方法，然后每个人分门别类地安排去学习，每周汇报一次(类似组会)，把这个模型有关的知识记录下来，大家都能看到。</p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328012636474.png" alt="image-20220328012636474"></p>
+<p><strong>上图是第一次开会后分配的任务。</strong></p>
+<p><strong>下面截取一部分我们每周的一些总结：</strong></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328013108366.png" alt="image-20220328013108366"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328013241975.png" alt="image-20220328013241975"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328013307974.png" alt="image-20220328013307974"></p>
+<p>当然，事实上比赛最后绝大部分的算法没有用到，但是毕竟我们的<strong>目的是学习嘛</strong>，学到了就不亏，何况还拿了奖。</p>
+<p>现在回过头来看看，大家还是很努力的，棒！</p>
+</li>
+</ol>
+<h3 id="比赛开始"><a href="#比赛开始" class="headerlink" title="比赛开始"></a>比赛开始</h3><ol>
+<li><p>Timeline</p>
+<p>先说一下时间线。</p>
+<div class="mermaid">gantt
+
+dateFormat  YYYY-MM-DD
+
+title 亚太时间管理甘特图
+
+section 我
+
+理解问题                      :done,    des1, 2021-11-25,12h
+
+思考解决方案                      :active,  des2, 2021-11-25,2d
+
+编程建模                     : crit,  done,      des3, after des1, 2d
+
+论文写作					:active, after des2,2d
+
+section ruia
+
+理解问题                      :crit, done, 2021-11-25,12h
+
+查找相应数据与文献                      :crit, done, 2021-11-25,2d
+
+论文准备工作                      :crit, done, 2021-11-26,36h
+
+完善解决方案                                 :crit, 2021-11-27,24h
+
+论文写作					:active, after des2,2d
+
+section cherish
+
+理解问题                     :crit, done, des4,2021-11-25,12h
+
+思考解决方案                      :active,  des1, 2021-11-25,1d
+
+数据集处理                   :done,after des4,36h
+
+ 编程建模                     : crit,done    ,    des3, after des1, 2d
+
+论文写作					:active, after des2,2d
+</div>
+
+<p>借用一下甘特图，使用不是很严谨，不过大体流程八九不离十。我把“完善解决方案”标红了，因为这个部分我认为是当时比较关键的一件事情，把四个问题的解决方案串了起来。</p>
+<p>总体上，最耗时的工作是：<strong>数据搜集、编程、写作。</strong>而且比赛第一天正好我是满课，基本上没有做特别多的工作。主要的部分都是第二天通宵和周六周日做完的。接下来，我也会围绕这几个耗时最长的部分谈谈感受。</p>
+</li>
+<li><p>数据搜集</p>
+<p>由于我们选了技术含量相对最低的C题，分析塞罕坝的环境影响并且对研究结果做迁移，我们需要搜集特别多的数据来进行分析。</p>
+<p><strong>一些传送门：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://data.stats.gov.cn/index.htm">国家统计局</a></p>
+<p><a target="_blank" rel="noopener" href="https://en.tutiempo.net/climate">气候数据</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.noaa.gov/">NOAA</a></p>
+<p><a target="_blank" rel="noopener" href="https://data.mendeley.com/">这个网站也不错，搜集数据集，但是好像要科学上网</a></p>
+<p>…</p>
+<p>很多网站也记不清了，大体上就是广撒网式搜刮数据。北京市的沙尘天气数据甚至是在一篇报告中获得的，总的来说就是，各种搜索引擎一起使用，有必要的话可以借助爬虫。</p>
+<p>数据搜集起码占了我们前两天75%的时间，没有数据，无从开始。</p>
+<p>这里也有一点个人建议：<strong>数据总是很零碎的，尤其是环境题，不要强求从解决方案的角度搜集所需要的数据，而是要从搜索到的数据上建立解决方案。</strong></p>
+</li>
+<li><p>编程建模</p>
+<p>获取一定数量的数据后，就是建模环节。因为我们这次第一第二题的方向是做分析，所以基本上是一些分析方法的使用。</p>
+<p>很多人说，层次分析法、灰度预测等等，都是很简单老套的模型，没有任何竞争力，但其实它们也有存在的意义。刚拿到手的数据，可以用简单的方法跑一下看看结果是否和自己猜测的接近，做一个初步的判定之后也能为解决方案确定方向。这里大概说一下我们要解决的问题以及最后我们的整体设计：</p>
+<p><em>问题：</em></p>
+<p><em>Q1：根据各种环境因子建立塞罕坝环境评估模型，对比分析塞罕坝治理前与治理后对周边环境的影响。</em></p>
+<p><em>Q2：评估塞罕坝治理对北京抗风沙能力的影响，量化评估塞罕坝在其中的作用。</em></p>
+<p><em>Q3：对塞罕坝的治理模式做迁移，找到国内适合的地点建立自然保护区。</em></p>
+<p><em>Q4：同Q3，但是在亚太地区做迁移，给出技术性报告。</em></p>
+<p><strong>解决思路：</strong></p>
+<p>我们先对塞罕坝四十年来的几项数据<strong>做了层次分析</strong>，得出了大概的因子权重，“土壤含水量”是所有塞罕坝带来的环境变化中最重要的一个因子。然后基于此，我们进行了进一步的<strong>主成分分析与熵权法分析，确实获得了相同的结果。</strong></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328110730892.png" alt="image-20220328110730892"></p>
+<p>接着，我们以承德市平均气温作为塞罕坝周围环境的评估标准，用牛顿插值去拟合曲线观察气温变化，<strong>发现确实越来越趋于稳定，证明塞罕坝有起到一定的调理作用。</strong></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328111041938.png" alt="image-20220328111041938"></p>
+<p>针对第二题，我们试图在塞罕坝的环境因子与北京市的沙尘天气数据之间建立联系。基于第一题的结果，我们选取含水量和二氧化碳吸收量作为代表，计算其与北京沙尘天气变化的<strong>关系系数</strong>，发现结果为0.8，<strong>证明了塞罕坝对北京市抵御风沙确实起到重要作用。</strong></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328111540947.png" alt="image-20220328111540947"></p>
+<p>基于第一题的结果，对塞罕坝模式进行迁移的基础，是找到自然环境相似的地点。我们考虑了三项重要区位特征：水土流失、土地荒漠化、植被类型。逻辑是这样的：<strong>通过opencv对全国水土流失与土地荒漠化地图进行掩膜，提取和塞罕坝色块特征相同的区域，再比较它们与塞罕坝的植被特征(这里是基于我们找到的LiDAR数据)是否相似，来选取合适的地点。</strong></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328112330603.png" alt="image-20220328112330603"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328112359077.png" alt="image-20220328112359077"></p>
+<p>最后，选取榆林市作为例子进行自然保护区尺度评估。<strong>借助榆林市政府公开的政府工作报告中的各类用地面积，</strong>使用简单的灰度预测来预测近年来可用于建设自然保护区的区位面积。</p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328112612134.png" alt="image-20220328112612134"></p>
+<p>问题四的解决思路和三相同，找相同区位特征，最后选取了澳大利亚的中部与西南部。</p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20220328112700797.png" alt="image-20220328112700797"></p>
+</li>
+<li><p>论文写作</p>
+<p>有了solution，最后就是形成论文。实际上，摘要是最重要的部分，最好是想好一个问题的解决方案就进行记录。可以先通过谷歌机翻，然后再人工润色。</p>
+<p>除了摘要，后面大体上的写作逻辑就是：问题描述、模型描述、算法原理、实验结果、分析结论。这样的逻辑写到最后，其实比想象中要顺利很多。强力推荐新手们就算以前没接触过，也要<strong>入门一下latex</strong>，写起来真的比word方便很多，也有很多现成的模板可以使用。</p>
+<p>到了论文写作这一部分，其实也都是很细节的问题。比如图的脚注、表格的格式等等，很折磨人。因为前几天通了一次宵，把很多精力都留在了建模上，最后细扣论文的时候我简直像一具行尸走肉。</p>
+<p>如果下次还参加的话，我给自己的建议是：<strong>论文写作可以提前开始。</strong>在建模的过程中就可以及时记录结果和素材，不要等最后再回过头来看自己的代码和结果。</p>
+</li>
+</ol>
+<h3 id="赛后碎碎念"><a href="#赛后碎碎念" class="headerlink" title="赛后碎碎念"></a>赛后碎碎念</h3><p>人生第一次真正意义上的通宵，献给了这次比赛。说实话，打完比赛之后那周，上早八的时候都能感受到心律不齐，还患上了“塞罕坝”PTSD，刚交完论文第二天，形策课上听到塞罕坝竟然不自觉地有点反胃….Anyway，当初是很难受，但是现在想想也都是很有趣的经历：</p>
+<p><strong>和cherish通宵前，我大放阙词：“我不可能睡着”。他嘲讽我说，一般这么说的人三点就睡了。事实上，我们最后都干到了天亮，然后同时昏倒在桌前。</strong></p>
+<p><strong>和ruia、cherish在咖啡厅，吃了黄焖鸡、鸡公煲，大家闲聊些有的没的。</strong></p>
+<p><strong>写论文的时候回看模型，突然发现跑的结果和我预想中完全相反，也和cherish的结果完全相反，吓得我一头冷汗，结果一看是数据集给错了。</strong></p>
+<p><strong>ruia说到可以用土地荒漠化地图这种来做分析的时候，大家都很高兴，因为把所有题目都串起来了，所以我在“完善模型”那里表了红色。</strong></p>
+<p><strong>正赛第一天遇到zngg，我不紧不慢的拿着圣代去实验室，他说：“你怎么这么悠闲！”可他不知道，我当时也慌的一批。</strong></p>
+<p><strong>想找我们的建模课老师当指导老师，结果直到比赛结束我们才联系上他。</strong></p>
+<p><strong>最后一天晚上，交作品前，我突然发现论文脚注标错了，是cherish的部分，赶紧看看他睡了没，结果真睡了，笑死，差点去他宿舍爆破他。</strong></p>
+<p>总之，很有趣，很有收获。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:1838040569@qq.com">Eric Miao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/14/apmcm/">http://example.com/2022/01/14/apmcm/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Gimdong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%A8%A1/">数模</a></div><div class="post_share"><div class="social-share" data-image="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-ne3oxl_1920x1080.png?versionId=CAEQFhiBgMDrwLKI_hciIDJiZDYxMmE3NDMxNDQzYzlhN2I2ZmQwZjM1ZDQxYWFi" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/24/CRF%E5%8E%9F%E7%90%86%E5%88%9D%E6%8E%A2/"><img class="prev-cover" src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-p8581j_1920x1080.png?versionId=CAEQFhiBgMCOzMH7_RciIDVjNmE1NGY0YTAyZjQ4ZjFiOWE1MzNlZWI2MDZkYzEx" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CRF原理初探</div></div></a></div><div class="next-post pull-right"><a href="/2021/09/05/sum/"><img class="next-cover" src="http://r.photo.store.qq.com/psc?/V14YjsgQ10TQsF/45NBuzDIW489QBoVep5mcWWrUXOLKq1kkvYL2m9Sy7FJ*FwM4J8h1Rd6P6PE2A.JN.Nxv11cwfwQ74vfaaIoORVQzhsXmbK0d4Rud4Wmcg0!/r" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">服创总结</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Eric Miao</div><div class="author-info__description">我们到了一个不断说再见的时候</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ERICMIAO0817"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ERICMIAO0817" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1838040569@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">To think different.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%B5%9B%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text">比赛开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%9B%E5%90%8E%E7%A2%8E%E7%A2%8E%E5%BF%B5"><span class="toc-number">3.</span> <span class="toc-text">赛后碎碎念</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/18/2022-07-18-Macbook%20Air/" title="First try on Mac"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-e7mjql_2880x1800+11.18.03.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="First try on Mac"/></a><div class="content"><a class="title" href="/2022/07/18/2022-07-18-Macbook%20Air/" title="First try on Mac">First try on Mac</a><time datetime="2022-07-18T13:39:02.000Z" title="发表于 2022-07-18 21:39:02">2022-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/09/cow/" title="写时复制技术与漏洞调研(COW and DIRTY COW)"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="写时复制技术与漏洞调研(COW and DIRTY COW)"/></a><div class="content"><a class="title" href="/2022/06/09/cow/" title="写时复制技术与漏洞调研(COW and DIRTY COW)">写时复制技术与漏洞调研(COW and DIRTY COW)</a><time datetime="2022-06-09T13:39:02.000Z" title="发表于 2022-06-09 21:39:02">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/01/BERT/" title="Bert学习记录"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/d1st99u-0493e064-ee96-4686-a7ef-e905aeecc12f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bert学习记录"/></a><div class="content"><a class="title" href="/2022/05/01/BERT/" title="Bert学习记录">Bert学习记录</a><time datetime="2022-05-01T13:39:02.000Z" title="发表于 2022-05-01 21:39:02">2022-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/07/%E5%9C%A8%E9%87%91%E4%B8%AD%E7%9A%84%E6%97%A5%E5%8D%87%E6%97%A5%E8%90%BD%E3%80%82/" title="持续更新--金中日子"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/bg1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="持续更新--金中日子"/></a><div class="content"><a class="title" href="/2022/04/07/%E5%9C%A8%E9%87%91%E4%B8%AD%E7%9A%84%E6%97%A5%E5%8D%87%E6%97%A5%E8%90%BD%E3%80%82/" title="持续更新--金中日子">持续更新--金中日子</a><time datetime="2022-04-07T13:39:02.000Z" title="发表于 2022-04-07 21:39:02">2022-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/01/%E4%BA%91%E7%BF%B3/" title="云翳"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/0f20dca2afaac0e74acc3af8bf6b766.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="云翳"/></a><div class="content"><a class="title" href="/2022/04/01/%E4%BA%91%E7%BF%B3/" title="云翳">云翳</a><time datetime="2022-04-01T13:39:02.000Z" title="发表于 2022-04-01 21:39:02">2022-04-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Eric Miao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5057c18799d5f3ee0784',
+      clientSecret: 'f462783e432c8e05420145bf94a09eb2688a61fd',
+      repo: 'ERICMIAO0817.github.io',
+      owner: 'ERICMIAO0817',
+      admin: ['ERICMIAO0817'],
+      id: '6c57e56224d06b7113e80caf5952a764',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

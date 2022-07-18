@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>写时复制技术与漏洞调研(COW and DIRTY COW) | Gimdong</title><meta name="keywords" content="Unix--OS"><meta name="author" content="Eric Miao,1838040569@qq.com"><meta name="copyright" content="Eric Miao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="OS课外学习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="写时复制技术与漏洞调研(COW and DIRTY COW)">
+<meta property="og:url" content="http://example.com/2022/06/09/cow/index.html">
+<meta property="og:site_name" content="Gimdong">
+<meta property="og:description" content="OS课外学习。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://4myblog.oss-cn-beijing.aliyuncs.com/img/os.png">
+<meta property="article:published_time" content="2022-06-09T13:39:02.000Z">
+<meta property="article:modified_time" content="2022-07-17T18:11:46.269Z">
+<meta property="article:author" content="Eric Miao">
+<meta property="article:tag" content="Unix--OS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://4myblog.oss-cn-beijing.aliyuncs.com/img/os.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/06/09/cow/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?hm.src = "https://hm.baidu.com/hm.js?c38d2c39cb578ef8cd93f733212f453e";";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '写时复制技术与漏洞调研(COW and DIRTY COW)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-07-18 02:11:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Gimdong" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://4myblog.oss-cn-beijing.aliyuncs.com/img/os.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Gimdong</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">写时复制技术与漏洞调研(COW and DIRTY COW)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-09T13:39:02.000Z" title="发表于 2022-06-09 21:39:02">2022-06-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-17T18:11:46.269Z" title="更新于 2022-07-18 02:11:46">2022-07-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">0</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="写时复制技术与漏洞调研(COW and DIRTY COW)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_03.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_03"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_04.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_04"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_05.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_05"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_06.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_06"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_07.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_07"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_08.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_08"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_09.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_09"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_10.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_10"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_11.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_11"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_12.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_12"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_13.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_13"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_14.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_14"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_15.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_15"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_16.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_16"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_17.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_17"></p>
+<p><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%BC%8F%E6%B4%9E--%E8%8B%97%E5%AD%90%E9%98%B3--%E8%AE%A1%E7%A7%912005%E7%8F%AD--8208200907_18.png" alt="写时复制技术与漏洞--苗子阳--计科2005班--8208200907_18"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:1838040569@qq.com">Eric Miao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/06/09/cow/">http://example.com/2022/06/09/cow/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Gimdong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unix-OS/">Unix--OS</a></div><div class="post_share"><div class="social-share" data-image="http://4myblog.oss-cn-beijing.aliyuncs.com/img/os.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/18/2022-07-18-Macbook%20Air/"><img class="prev-cover" src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-e7mjql_2880x1800+11.18.03.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">First try on Mac</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/01/BERT/"><img class="next-cover" src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/d1st99u-0493e064-ee96-4686-a7ef-e905aeecc12f.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Bert学习记录</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Eric Miao</div><div class="author-info__description">我们到了一个不断说再见的时候</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ERICMIAO0817"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ERICMIAO0817" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1838040569@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">To think different.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/18/2022-07-18-Macbook%20Air/" title="First try on Mac"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-e7mjql_2880x1800+11.18.03.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="First try on Mac"/></a><div class="content"><a class="title" href="/2022/07/18/2022-07-18-Macbook%20Air/" title="First try on Mac">First try on Mac</a><time datetime="2022-07-18T13:39:02.000Z" title="发表于 2022-07-18 21:39:02">2022-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/09/cow/" title="写时复制技术与漏洞调研(COW and DIRTY COW)"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/os.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="写时复制技术与漏洞调研(COW and DIRTY COW)"/></a><div class="content"><a class="title" href="/2022/06/09/cow/" title="写时复制技术与漏洞调研(COW and DIRTY COW)">写时复制技术与漏洞调研(COW and DIRTY COW)</a><time datetime="2022-06-09T13:39:02.000Z" title="发表于 2022-06-09 21:39:02">2022-06-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/01/BERT/" title="Bert学习记录"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/d1st99u-0493e064-ee96-4686-a7ef-e905aeecc12f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bert学习记录"/></a><div class="content"><a class="title" href="/2022/05/01/BERT/" title="Bert学习记录">Bert学习记录</a><time datetime="2022-05-01T13:39:02.000Z" title="发表于 2022-05-01 21:39:02">2022-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/07/%E5%9C%A8%E9%87%91%E4%B8%AD%E7%9A%84%E6%97%A5%E5%8D%87%E6%97%A5%E8%90%BD%E3%80%82/" title="持续更新--金中日子"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/bg1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="持续更新--金中日子"/></a><div class="content"><a class="title" href="/2022/04/07/%E5%9C%A8%E9%87%91%E4%B8%AD%E7%9A%84%E6%97%A5%E5%8D%87%E6%97%A5%E8%90%BD%E3%80%82/" title="持续更新--金中日子">持续更新--金中日子</a><time datetime="2022-04-07T13:39:02.000Z" title="发表于 2022-04-07 21:39:02">2022-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/01/%E4%BA%91%E7%BF%B3/" title="云翳"><img src="http://4myblog.oss-cn-beijing.aliyuncs.com/img/0f20dca2afaac0e74acc3af8bf6b766.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="云翳"/></a><div class="content"><a class="title" href="/2022/04/01/%E4%BA%91%E7%BF%B3/" title="云翳">云翳</a><time datetime="2022-04-01T13:39:02.000Z" title="发表于 2022-04-01 21:39:02">2022-04-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Eric Miao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5057c18799d5f3ee0784',
+      clientSecret: 'f462783e432c8e05420145bf94a09eb2688a61fd',
+      repo: 'ERICMIAO0817.github.io',
+      owner: 'ERICMIAO0817',
+      admin: ['ERICMIAO0817'],
+      id: 'e5bc4ed092bd764f2c2d76242896587a',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
