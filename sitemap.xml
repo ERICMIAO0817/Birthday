@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/10/10/self-%20management/</loc>
+    
+    <lastmod>2022-10-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/treasure/index.html</loc>
     
     <lastmod>2022-10-10</lastmod>
@@ -198,6 +207,13 @@
   
   <url>
     <loc>http://example.com/tags/%E8%87%AA%E8%BF%B0/</loc>
+    <lastmod>2022-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
