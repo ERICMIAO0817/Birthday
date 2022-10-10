@@ -1,0 +1,335 @@
+html{
+    -ms-text-size-adjust:100%;-webkit-text-size-adjust:100%
+}
+body{
+    margin:0
+}
+html,body{
+    font-family:Verdana,sans-serif;font-size:15px;line-height:1.5
+}
+html{
+    overflow-x:hidden
+}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+h1,h2,h3,h4,h5,h6{
+    font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0
+}
+.default-padding{
+    padding:8px 16px!important
+}
+.container{
+    position:relative
+}
+.blur-image{
+    max-width:100%;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+img{
+    vertical-align:middle
+}
+a{
+    color:inherit
+}
+.display-middle{
+    margin-top:16px!important;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%)
+}
+.white,.hover-white:hover{
+    font-family: 'ZCOOL XiaoWei', serif;
+    color:#fff!important;
+    font-weight: bolder;
+}
+.padding-32{
+    padding-top:32px!important;
+    padding-bottom:32px!important
+}
+.padding-16{
+    padding-top:16px!important;
+    padding-bottom:16px!important
+}
+.image{
+    min-width: 500px;
+    max-width: 1000px;
+    height: 500px;
+}
+.logo{
+    margin-top: 0;
+    height: 46px;
+    width: 50px;
+}
+/* The navigation menu */
+.navbar {
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 4fr;
+    align-items: center;
+    position: fixed;
+    overflow: hidden;
+    background-color: #ffffff;
+    z-index: 1;
+    border-bottom: 1px solid #399d00;
+}
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.subnav {
+    text-align: left;
+    float: left;
+    overflow: hidden;
+}
+
+.subnav_logo {
+    text-align: center;
+    float: left;
+    overflow: hidden;
+}
+
+.subnav_blog {
+    text-align: right;
+    float: right;
+    overflow: hidden;
+}
+.subnav .subnavbtn {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: #399d00;
+    padding: 25px 25px;
+    background-color: inherit;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.subnav_logo .subnavbtn_logo {
+    border: none;
+    outline: none;
+    color: #399d00;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+.subnav_blog .subnavbtn_blog {
+    border: none;
+    outline: none;
+    color: #399d00;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+.navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: #87f85d;
+}
+.subnav-content {
+    display: none;
+    position: fixed;
+    left: 0;
+    background-color: green;
+    width: 100%;
+    z-index: 1;
+}
+.subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+.subnav-content a:hover {
+    background-color: #87f85d;
+    color: black;
+}
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+svg text {
+    animation: stroke 10s 1;
+    letter-spacing: 10px;
+    font-size: 100px;
+    fill: #2FFF00FF;
+}
+@keyframes stroke {
+    0% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgb(255, 0, 0);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 3;
+    }
+    20% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgb(42, 127, 255);
+        stroke-width: 3;
+    }
+    50% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgb(255, 241, 0);
+        stroke-width: 3;
+    }
+    70% {
+        fill: rgba(72, 138, 20, 0);
+        stroke: rgb(78, 245, 125);
+        stroke-width: 3;
+    }
+    90%,
+    100% {
+        fill: rgb(47, 255, 0);
+        stroke: rgb(252, 252, 252);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 3;
+    }
+}
+.footer_{
+    text-align: center;
+    color: #ffffff !important;
+    background-color:#8bc34a!important
+}
+.title_{
+    border-bottom:1px solid #ccc!important;
+    font-family: 'Noto Serif SC', serif;
+    text-align: center;
+    color: #399d00 !important;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.title_sub{
+    font-family: 'Noto Serif SC', serif;
+    text-align: center;
+    color: #181402 !important;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.plain_text{
+    font-weight: bolder;
+    font-size: 22px;
+    margin-bottom: 0;
+    padding: 30px 50px 0 10px;
+    width: 98%;
+}
+.introduction{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.introduction .plain_text{
+    padding: 30px 50px 0 10px;
+    text-align: center;
+    width: 98%;
+}
+.introduction .intro_pic{
+    text-align: center;
+    padding: 30px 30px 30px 20px;
+    width: 90%;
+}
+.image_icon{
+    max-width:100%;height:auto;
+}
+.box{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+    min-width:1000px;
+    height:auto;
+}
+.box>*{
+    flex: 1 1 600px;
+}
+.func{
+    margin-bottom:16px!important;
+    text-align: center;
+}
+.scene{
+    margin-bottom:16px!important
+}
+.tag{
+    position:absolute;
+    left:0;
+    top:0;
+    font-size: 20px;
+    color:#fff!important;
+    background-color: #399d00 !important
+}
+.formbtn{
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+    font-size: 20px;
+    color:#fff!important;
+    background-color: #399d00 !important
+
+}
+#display-image,#display-image2{
+    text-align: center;
+    width: 800px;
+    min-height: 400px;
+    border: 3px solid forestgreen;
+    background-position: center;
+    background-size: cover;
+}
+#video{
+    text-align: center;
+    width: 800px;
+    min-height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+
+.subnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .subnav .subnavbtn{
+        display: none;
+}
+    .subnav_blog .subnavbtn_blog{
+        display: none;
+    }
+    .navbar{
+        display: flex;
+        overflow: hidden;
+        background-color: white;
+    }
+    .subnav a.icon {
+        float: right;
+        display: block;
+    }
+    #home{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navbar.subnav.responsive {
+        position: relative;
+    }
+    .navbar.subnav.responsive .icon {
+        position: relative;
+        left: 2px;
+        right: 0;
+        top: 0;
+    }
+    .navbar.subnav.responsive .subnavbtn{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
