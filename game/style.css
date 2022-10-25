@@ -1,0 +1,264 @@
+html{
+	background-color: black;
+}
+body{
+	background-color: black;
+	background-image: url("https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-n6rp8w_1920x1080.png");
+}
+.mask{
+	height:100%;
+	width:100%;
+	position:fixed;
+	_position:absolute;
+	top:0;
+	z-index:1000;
+	display: none;
+}
+
+.opacity{
+	opacity:0.3;
+	filter: alpha(opacity=30);
+	background-color:#000;
+	display: none;
+}
+.content{
+	z-index: 1001;
+	color: #00ffd5;
+	display: none;
+}
+.finale{
+	z-index: 1001;
+	min-width: 600px;
+	min-height: 400px;
+	display: none;
+}
+.display-middle{
+	z-index: 1001;
+	margin-top:16px!important;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%)
+}
+div{
+	margin:0px auto;
+	max-width: 100%;
+	/*display: -webkit-flex; !* Safari *!*/
+	/*display: flex;*/
+	/*flex-wrap: wrap;*/
+	/*flex-direction: row;*/
+	/*max-height: 100%;*/
+	/*background-color: black;*/
+	/*margin: 0;*/
+}
+#vs{
+	align-items: center;
+	align-content: center;
+	margin: 0px auto;
+	font-weight: bolder;
+	font-size: 40px;
+}
+#snake{
+	border: #00ffd5 1px dashed;
+	margin-top: 20px;
+	/*width: 1000px;*/
+	/*height: 400px;*/
+	margin-bottom: 20px;
+}
+
+#myCanvas {
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
+	/*width: 1000px;*/
+	/*height: 400px;*/
+	margin-bottom: 20px;
+}
+.block{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 20px;
+	/*padding: 0.6em 2em;*/
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #000000;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.block:before{
+	content: "";
+	background: linear-gradient(
+			45deg,
+			#ff0000,
+			#ff7300,
+			#fffb00,
+			#48ff00,
+			#00ffd5,
+			#002bff,
+			#7a00ff,
+			#ff00c8,
+			#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+@keyframes glowing-canvas {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+.block:after{
+	z-index: -1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+.name {
+	font-family: 'ZCOOL XiaoWei', serif;
+	color : #ffffff;
+}
+
+/* CSS */
+.button-85 {
+	font-weight: bolder;
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.button-85:before {
+	content: "";
+	background: linear-gradient(
+			45deg,
+			#ff0000,
+			#ff7300,
+			#fffb00,
+			#48ff00,
+			#00ffd5,
+			#002bff,
+			#7a00ff,
+			#ff00c8,
+			#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.button-85:after {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+.neon {
+	font-family: 'ZCOOL XiaoWei', serif;
+	font-weight: bolder;
+	font-size: 50px;
+	color: #fff;
+	text-shadow:
+			0 0 5px #ff7300,
+			0 0 10px #fffb00,
+			0 0 20px #48ff00,
+			0 0 40px #1aff00,
+			0 0 80px #00ffd5,
+			0 0 90px #002bff,
+			0 0 100px #7a00ff,
+			0 0 150px #ff00c8;
+}
+
+#score{
+	font-weight: bolder;
+	font-size: 30px;
+}
+
+.score-show{
+	font-weight: bolder;
+	font-size: 30px;
+}
+.epoch-show{
+	font-weight: bolder;
+	font-size: 30px;
+}
+
+.btnn{
+	padding: 10px;
+	font-size: 1.1em;
+	background: #32bacf;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.btnn:hover {
+	background: rgba(0, 0, 0, 0.7);
+}
