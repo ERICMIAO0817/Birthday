@@ -12,7 +12,7 @@ var cellBorderColor = "black";
 var dropout = 0.2
 var limitted = 0;
 
-var img_cell = new Image()
+var img_cell = new Image();
 
 function randomInit(){
 
