@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Celseq2数据处理 | Gimdong</title><meta name="keywords" content="Celseq2数据处理"><meta name="author" content="Eric Miao,1838040569@qq.com"><meta name="copyright" content="Eric Miao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Celseq2是什么鬼啊！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Celseq2数据处理">
+<meta property="og:url" content="http://example.com/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="Gimdong">
+<meta property="og:description" content="Celseq2是什么鬼啊！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-9m6w7k_1920x1080.png">
+<meta property="article:published_time" content="2023-10-22T17:48:43.000Z">
+<meta property="article:modified_time" content="2023-10-22T17:05:45.605Z">
+<meta property="article:author" content="Eric Miao">
+<meta property="article:tag" content="Celseq2数据处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-9m6w7k_1920x1080.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?hm.src = "https://hm.baidu.com/hm.js?c38d2c39cb578ef8cd93f733212f453e";";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Celseq2数据处理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-23 01:05:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Gimdong" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-j865jy_1920x1080.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Gimdong</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Celseq2数据处理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-22T17:48:43.000Z" title="发表于 2023-10-23 01:48:43">2023-10-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-22T17:05:45.605Z" title="更新于 2023-10-23 01:05:45">2023-10-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/">生物信息学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Celseq2数据处理"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Celseq2数据处理</h1>
+<p>Celseq2数据是目前single-cell RNA数据中较为少见且古早的一类，基于Celseq改进，由sra获得的fastq文件有两份，第一份存储了barcode与umi信息，第二份是cRNA。</p>
+<p>目前搜集到的，适用于处理Celseq2的流水线有以下这些：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://yanailab.github.io/celseq2/">celseq2</a></li>
+<li><a target="_blank" rel="noopener" href="https://bioconductor.org/packages/release/bioc/vignettes/scruff/inst/doc/scruff.html#introduction">scruff</a></li>
+<li><a target="_blank" rel="noopener" href="https://dropest.readthedocs.io/en/v0.8.6/index.html">dropEst</a></li>
+<li><a target="_blank" rel="noopener" href="https://snakepipes.readthedocs.io/en/latest/content/workflows/scRNA-seq.html">snakePipes</a></li>
+</ul>
+<p>这里着重记录以上四种流水线的配置、运行，填补互联网上关于Celseq2数据预处理的一些空白。</p>
+<h2 id="Pipeline-1-celseq2">Pipeline 1:	celseq2</h2>
+<p>celseq2是celseq2数据原本自带的流水线，但是该流水线的主要作者已经离开华盛顿大学，最近一次commit是五年前。这套流水线最适合处理celseq2数据，但缺点是只能到产出UMI计数矩阵这一步，获得bam文件。</p>
+<h3 id="1-配置">1. 配置</h3>
+<p>本身是三步走的配置，即clone、cd、pip install，但这里与文档不同，需要注意的是由于流水线版本较老，新的pandas、numpy、python版本三者中间的冲突经常导致流水线无法正常工作，这里祭出含泪测试的绝对无错配置方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/yanailab/celseq2.git</span><br><span class="line"><span class="built_in">cd</span> celseq2</span><br><span class="line">conda <span class="built_in">env</span> create -f environment.yaml <span class="comment"># 非常重要，用它的文件创建虚拟环境，这一步文档中没有，我debug了很久才发现根据这个文件配置就不会有问题。</span></span><br><span class="line">pip install ./</span><br></pre></td></tr></table></figure>
+<h3 id="2-需要的文件">2. 需要的文件</h3>
+<p>对于一项Celseq2数据，首先去ncbi下载相应的sra文件，转成fastq.gz文件。这一步准备完毕后，需要再根据sra对应的GSE等等去ncbi找，找到barcode文件下载。</p>
+<p>下载barcode文件后，需要处理成如下格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#barcode_id     seq</span></span><br><span class="line">CACACAAAGCTAAGAT</span><br><span class="line">TCAACGAGTTACGTCA</span><br><span class="line">GACTACAAGGGCTCTC</span><br><span class="line">GAAATGACACTCGACG</span><br><span class="line">CACATAGTCCGTCATC</span><br><span class="line">GACCTGGGTAGCTTGT</span><br><span class="line">CACACCTTCCGTAGGC</span><br><span class="line">CAGATCAAGTCACGCC</span><br><span class="line">TAGACCATCCTTCAAT</span><br><span class="line">TCAGGTATCCGTCATC</span><br><span class="line">GGAGCAACACAGGTTT</span><br><span class="line">CTCACACCACCAGCAC</span><br><span class="line">CCTACCAAGATCTGAA</span><br><span class="line">GACGCGTTCCAGGGCT</span><br><span class="line">GGAGCAAAGGCAGGTT</span><br><span class="line">CCGTTCACAAGTCTAC</span><br><span class="line">TCATTACAGACACTAA</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>不要按照文档中的来，容易有问题。按照我这个文件设置，然后在config文件里把<strong>BC_SEQ_COLUMN</strong>设置为<strong>0</strong>。</p>
+<p>关于barcode起始位置与长度、UMI起始位置与长度，按照我们计算机数组的方式，从0开始算，长度按正常长度算，不需要考虑-1的问题。（例如，ncbi上写，barcode是R1的1-16，那么起始位置就是0，长度为16）。这里也非常建议自己zcat查看一下fastq.gz文件看看任意一条数据的对应片段是否能在barcode文件中找到匹配。</p>
+<p>这些搞定之后，需要配置一下bowtie2，这个教程很多，也不麻烦，配置完毕后，下载你数据对应的参考基因组文件（gtf），然后用bowtie2提前做好索引，把索引文件前缀写入config文件中即可。</p>
+<p>关于config文件中，GENE_BIOTYPE这一栏目，可以直接注释掉下面的“- ’protein_coding‘ - ’ lincRNA‘ ”这些，让流水线自己识别，全部汇报。</p>
+<h3 id="3-RUN">3. RUN</h3>
+<p>在正式run之前，需要配置一下table文件，这个很好设置，按文档来。</p>
+<p>搞定之后就run，可以先–dryrun试试可行性，可以的话就直接run吧！</p>
+<p>正常run完之后的结果和文档中相同，比较推荐在**/usr/bin/bowtie2 -p 15 -x **这里结束的时候，进到small_log里面看一下对比结果怎么样，这里的对比结果就是bowtie2的输出，一般是这样：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">53470118</span> reads; of these:</span><br><span class="line">  <span class="number">53470118</span> (<span class="number">100.00</span>%) were unpaired; of these:</span><br><span class="line">    <span class="number">8082479</span> (<span class="number">15.12</span>%) aligned <span class="number">0</span> times</span><br><span class="line">    <span class="number">26550259</span> (<span class="number">49.65</span>%) aligned exactly <span class="number">1</span> time</span><br><span class="line">    <span class="number">18837380</span> (<span class="number">35.23</span>%) aligned &gt;<span class="number">1</span> times</span><br><span class="line"><span class="number">84.88</span>% overall alignment rate</span><br></pre></td></tr></table></figure>
+<p>静静等待跑完就ok，然后再根据文档中storage的部分，或者使用samtools view -b -S得到bam文件即可。</p>
+<h2 id="Pipeline-2-Scruff">Pipeline 2:	Scruff</h2>
+<p>scruff其实理论上我并没有跑完，因为真的很慢。是直接采用R语言的一个处理包，配置起来相对简单。值得一提的是，Scruff最新版本本身对R语言版本的要求应该是4及以上，需要注意虚拟环境的配置。</p>
+<h2 id="Pipeline-3-dropEst">Pipeline 3:	dropEst</h2>
+<p>dropEst是最近几天才发觉的一个可以用来处理Celseq2数据的流水线，但文档中dropEst表示，对于Celseq2的测试还不足够，可能会有一些问题（…）。但dropEst的一个好处是，如果用来做RNA速率分析，那么dropEst出来的结果可以直接在velocyto中使用，不需要另外准备一大堆文件去适配velocyto。</p>
+<h3 id="1-配置-2">1. 配置</h3>
+<p>dropEst的配置是我认为在这几个流水线中最容易出问题的，因为本身是需要cmake编译的项目，而cmake编译众所周知…一旦bug出现那真的是五花八门。</p>
+<p>实际上，如果docker使用较多较熟悉的话，建议采用docker配置，省去很多麻烦，具体的文档中写的比较清楚。</p>
+<p>如果不采用docker的话，这里记录一些点：</p>
+<ul>
+<li>尽量不在虚拟环境中配置。虚拟环境中配置有可能遇到cmake文件链接不到一些服务器本身的c++库，需要手动修改项目的build.make文件以及CMakeList文件，设置一些Cmake变量来规避，麻烦。</li>
+<li>Cmake版本很重要，尽量采用3.11及以上的版本。</li>
+<li>实测一个比较顺利的操作是，通过conda先在base环境中安装dropEst，如果安装完成可以试试dropEst的一些命令是否正常，正常的话不需要再编译原项目了。但一般来说应该是不可以的，这个时候如果conda install之后，base环境已经会下载好需要的各种库，省去一些自己下载的麻烦。<strong>这里着重强调是因为，很多时候我们使用的服务器，自己是没有管理员权限，没办法通过sudo apt-get去直接下载库并且解决问题，那么采取上面说的这个方式，我试过是ok的。</strong></li>
+</ul>
+<h3 id="2-需要的文件-2">2. 需要的文件</h3>
+<p>相比于celseq2流水线，dropEst需要的文件少一些，第一步droptag需要的仅仅是一个配置文件+序列，很简单。这一步完成后，需要通过第二步进行对齐，这里可以用STAR、Bowtie2啥的都行，按照文档来即可。第三步的文件配置也和第一步类似，但需要一些参考基因组的文件以及barcode相关文件，文档也写的比较清楚。第三步目前我还没执行到，后续补充。</p>
+<h3 id="3-RUN-2">3. RUN</h3>
+<p>可以直接自己写个脚本按照2中的三步去run，也可以按照文档一步一步来，比较新手友好。值得一提的是，建议结合velocyto的文档中，run_dropest的部分去对照，方便下一步进行RNA速率计算等等。这一步我也会在这几天补充。</p>
+<h2 id="Pipeline-4-snakePipes">Pipeline 4:	snakePipes</h2>
+<p>这个流水线比较奇特，貌似包含了很多细分方向，不止是单细胞RNA分析。它的安装需要先配置好mamba，通过mamba去创建虚拟环境，按照文档走就行，也没有什么特别值得记录的地方。</p>
+<p>但这个流水线文档步骤写的很不详细，没有进一步测试数据运行情况。后续有机会补充上来。</p>
+<h2 id="总结">总结</h2>
+<p>这将近20天的时间，从不理解数据的各种意义，到现在可以慢慢去理解分析这些流水线的工作流，还是挺有意思的一件事情。道阻且长，行则将至。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:1838040569@qq.com">Eric Miao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">http://example.com/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Gimdong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">Celseq2数据处理</a></div><div class="post_share"><div class="social-share" data-image="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-9m6w7k_1920x1080.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/12/16/water/"><img class="next-cover" src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-76389o_1920x1080.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何看待目标</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Eric Miao</div><div class="author-info__description">我们到了一个不断说再见的时候</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ERICMIAO0817"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ERICMIAO0817" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1838040569@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">To think different.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Celseq2数据处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pipeline-1-celseq2"><span class="toc-number">1.1.</span> <span class="toc-text">Pipeline 1:	celseq2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9C%80%E8%A6%81%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 需要的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RUN"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. RUN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pipeline-2-Scruff"><span class="toc-number">1.2.</span> <span class="toc-text">Pipeline 2:	Scruff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pipeline-3-dropEst"><span class="toc-number">1.3.</span> <span class="toc-text">Pipeline 3:	dropEst</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9C%80%E8%A6%81%E7%9A%84%E6%96%87%E4%BB%B6-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 需要的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RUN-2"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. RUN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pipeline-4-snakePipes"><span class="toc-number">1.4.</span> <span class="toc-text">Pipeline 4:	snakePipes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="Celseq2数据处理"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-9m6w7k_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Celseq2数据处理"/></a><div class="content"><a class="title" href="/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="Celseq2数据处理">Celseq2数据处理</a><time datetime="2023-10-22T17:48:43.000Z" title="发表于 2023-10-23 01:48:43">2023-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/water/" title="如何看待目标"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-76389o_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何看待目标"/></a><div class="content"><a class="title" href="/2022/12/16/water/" title="如何看待目标">如何看待目标</a><time datetime="2022-12-16T10:00:02.000Z" title="发表于 2022-12-16 18:00:02">2022-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/18/Life-game/" title="康威的生命游戏"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-pkle1j_1920x1200.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="康威的生命游戏"/></a><div class="content"><a class="title" href="/2022/10/18/Life-game/" title="康威的生命游戏">康威的生命游戏</a><time datetime="2022-10-18T08:39:02.000Z" title="发表于 2022-10-18 16:39:02">2022-10-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/10/self-%20management/" title="管好你自己"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-k9o36m_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="管好你自己"/></a><div class="content"><a class="title" href="/2022/10/10/self-%20management/" title="管好你自己">管好你自己</a><time datetime="2022-10-10T08:39:02.000Z" title="发表于 2022-10-10 16:39:02">2022-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/17/birthday/" title="无题"><img src="/img/gimdong.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/08/17/birthday/" title="无题">无题</a><time datetime="2022-08-16T16:17:37.915Z" title="发表于 2022-08-17 00:17:37">2022-08-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Eric Miao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://ericcsu.top/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://ericcsu.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5057c18799d5f3ee0784',
+      clientSecret: 'f462783e432c8e05420145bf94a09eb2688a61fd',
+      repo: 'ERICMIAO0817.github.io',
+      owner: 'ERICMIAO0817',
+      admin: ['ERICMIAO0817'],
+      id: '13e24db68d63d6ed43ba51b86bbd1f76',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Twikoo' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
