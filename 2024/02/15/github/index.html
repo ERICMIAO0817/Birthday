@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>”CS+X“-关于“轮子” | Gimdong</title><meta name="keywords" content="CS+X"><meta name="author" content="Eric Miao,1838040569@qq.com"><meta name="copyright" content="Eric Miao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最基本的工具与包安装等等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="”CS+X“-关于“轮子”">
+<meta property="og:url" content="http://example.com/2024/02/15/github/index.html">
+<meta property="og:site_name" content="Gimdong">
+<meta property="og:description" content="最基本的工具与包安装等等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png">
+<meta property="article:published_time" content="2024-02-14T17:28:47.000Z">
+<meta property="article:modified_time" content="2024-02-16T18:53:10.889Z">
+<meta property="article:author" content="Eric Miao">
+<meta property="article:tag" content="CS+X">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/02/15/github/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?hm.src = "https://hm.baidu.com/hm.js?c38d2c39cb578ef8cd93f733212f453e";";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '”CS+X“-关于“轮子”',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-17 02:53:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Gimdong" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-md9dwy_1920x1080.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Gimdong</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">”CS+X“-关于“轮子”</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-02-14T17:28:47.000Z" title="发表于 2024-02-15 01:28:47">2024-02-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-16T18:53:10.889Z" title="更新于 2024-02-17 02:53:10">2024-02-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%B7%A8%E5%AD%A6%E7%A7%91%E6%AF%95%E8%AE%BE%E7%B3%BB%E5%88%97/">跨学科毕设系列</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="”CS+X“-关于“轮子”"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="“CS-X”-关于“轮子”"><a href="#“CS-X”-关于“轮子”" class="headerlink" title="“CS+X”-关于“轮子”"></a>“CS+X”-关于“轮子”</h1><p>讲完了关于开发环境的一些细节，这一部分，我想讲讲“轮子”。</p>
+<p>可能很多非计算机专业的同学，没听说过“轮子”这个说法。其实“轮子”值得就是封装好的工具包，不需要自己从零开始实现一些功能。关于“轮子”这一说法是怎么来的：<a target="_blank" rel="noopener" href="https://youtu.be/AQsZsgJ30AE?t=886">https://youtu.be/AQsZsgJ30AE?t=886</a></p>
+<p>下面我会去掉双引号，直奔主题。</p>
+<h2 id="看待轮子"><a href="#看待轮子" class="headerlink" title="*看待轮子"></a>*看待轮子</h2><p>程序员界很多人都说：“不要重复造轮子”。对于我们的需求–将计算机与自身学科结合的角度出发，其实尽量少造轮子得好。但讲真，我个人的感受是这样的：当你想要从头实现某个轮子的时候，不知不觉的，你也会用上其他轮子。当你使用轮子的时候，其实你也是在开发自己的轮子。所以，有时候不需要太过纠结，不想花时间实现并且与主要开发内容无关的部分，找找轮子吧。</p>
+<p>但很多时候，我们也要从优化的角度出发。举一个我课程实验的例子，当时我是做一个APP内搜索引擎。我的搜索引擎有一个很基础的模块：分词。说到分词，大部分人第一反应就是大名鼎鼎的jieba库。jieba很用户友好，调用也很方便。但当时我正好对NLP有兴趣，想自己做分词功能，于是我就把我实现的和jieba的进行了对比，自己实现的分词器本地运行比调用jieba快了十几倍。所以，还是离不开具体需求。在我们这个系列，其实这方面需求不高，对于只需要应用的功能，还是优先考虑已经成熟的工具包。</p>
+<h2 id="如何判断"><a href="#如何判断" class="headerlink" title="如何判断"></a>如何判断</h2><p>那么，对于我们的毕设项目，或者入门的跨学科项目，如何判断哪些模块需要自己开发、哪些模块优先找轮子呢？本质上还是需求分析。</p>
+<p>我认为可以这样想：</p>
+<p>对于某功能或模块，首先可以考虑：</p>
+<p><strong>该功能&#x2F;模块，是否为项目核心部分？如果是，现有解决方案是否成熟？</strong></p>
+<p>对毕设来说，核心部分如果涉及方法创新，那么一定是自己实现为好，因为需要进行二次开发的可能性大，从头实现更有利于进一步优化。</p>
+<p>第二步可以考虑：</p>
+<p><strong>该功能&#x2F;模块，实现难度大不大？如果我自己从头做，做得来吗？</strong></p>
+<p>如果不涉及核心部分，那么第二步就是考虑是否有必要自己做、能不能做得出来。这一点很现实，因为不是核心的部分，自己实现如果耽搁了进度那是得不偿失的事情。</p>
+<p>接着，也是非常重要的一步：</p>
+<p><strong>该功能&#x2F;模块，目前已有轮子做的怎么样，成不成熟？</strong></p>
+<p>有一些功能，其实很多人都实现过，你会找到很多轮子；也有可能这个功能做的人很少，找到的轮子都质量不高。那么，就需要进一步了解这些实现过的工具，哪些更符合当下的需求。</p>
+<p><strong>具体举一个例子：</strong></p>
+<p><em>假如我从未做过ML&#x2F;DL，且毕设的需求是改进手写体识别算法，我看到有人在预处理部分，比如边缘检测使用了Canny算子，我需要自己实现它吗？</em></p>
+<p><em>一步步考虑。</em></p>
+<p><em>首先，在我们的任务里，手写体识别是核心功能与模块，<strong>边缘检测这一部分不算最核心的部分，也大概率不需要我自己进行二次开发与优化，我只需要这个功能。</strong></em></p>
+<p><em>接着，这个功能实现起来麻烦吗？<strong>我以前从未接触过计算机视觉，更别提算子了！</strong></em></p>
+<p><em>最后，找一找关于Canny算子的轮子成熟吗？</em></p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217001129078.png" alt="image-20240217001129078"></p>
+<p><em>opencv内置了！opencv是很正规完善的库，真香！</em></p>
+<p>大概就是这么一个过程，当然，也可能在使用后发现不好用，选择新的轮子或者自己从头做都是可以的，一切围绕需求出发。</p>
+<h2 id="常用的一些库"><a href="#常用的一些库" class="headerlink" title="常用的一些库"></a>常用的一些库</h2><p>面向ML&#x2F;DL、数据分析等等，有一些库可能非常常用，也非常好用。</p>
+<p>Numpy、Pandas、Scipy不用说，数据分析必备。</p>
+<p>Scikit-Learn非常适合仅仅需要应用常见的机器学习方法，不需要对方法模型进行二次改进的场景。</p>
+<p>Matplotlib、Seaborn、Plotly是画图神器。</p>
+<p>OpenCV是计算机视觉方面非常好用的工具包，图像处理等等都有包括。</p>
+<p>Jieba、NTLK都是自然语言处理很好用的包，各种教程也很全。</p>
+<p>Pytorch、TensorFlow是目前常用的深度学习框架，适合开发深度学习模型。</p>
+<p>等等等等，库很多，这里只是举最最最最常见的。</p>
+<h2 id="轮子可以参考，项目呢？"><a href="#轮子可以参考，项目呢？" class="headerlink" title="轮子可以参考，项目呢？"></a>轮子可以参考，项目呢？</h2><p>讲了轮子，那项目本身，是否能找到参考呢？核心模块的实现，是否一定是从0到1呢？也并不是。</p>
+<p>学习总是从模仿开始，更何况我们目前的目的是快速将计算机的部分融入到自身学科中。阅读需求相似的项目代码，理解一些框架是如何使用的、数据是如何流动的，自己的项目要怎么组织。</p>
+<p>知之为知之，不知为不知。参考与照搬，保持着微妙的关系。接下来，我会分享一些关于github基本使用、入门如何阅读项目代码的小想法，作为参考。</p>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>有条件的建议尽量上🪜，不然只能参考教程配置DNS啥的。</p>
+<p>这里我只分享我平时怎么去根据需求搜索相关项目，所以关于github的一些其他基本功能，可以去查其他教程。</p>
+<p>搜索的第一要义：英文。</p>
+<p>尽量把自己需求的关键词摘出来进行搜索。比如手写体识别，那就是handwritten recognition等等作为关键词。我们先输入进去：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217013358662.png" alt="image-20240217013358662"></p>
+<p>可以看到，已经有一些相关的项目存在了。左边可以过滤语言等等，详细的搜索语法可以参考github官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/zh/search-github/getting-started-with-searching-on-github/about-searching-on-github">https://docs.github.com/zh/search-github/getting-started-with-searching-on-github/about-searching-on-github</a> （我们之前强调过，官方文档的重要性）</p>
+<p>那么中文搜索会怎么样呢？</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217013757028.png" alt="image-20240217013757028"></p>
+<p>可以看到，搜出来的仓库只有202个，而英文搜出来有8.7千个。很多开发者习惯了用英文写文档，但中文搜索也可以反向排除一些情况：中文搜索出来的手写体识别，跟汉字识别的相关性可能更大（个人观点）</p>
+<p>好了，搜出来这么多结果，该选择哪个入手呢？</p>
+<p>一般来说，我会选择star相对高的库来看。star是这个：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217014123318.png" alt="image-20240217014123318"></p>
+<p>除了star外，也要注意时间，不要太古早，ML与DL领域，方法是日新月异。</p>
+<p>那么我现在点开第一个仓库看：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217014316011.png" alt="image-20240217014316011"></p>
+<p>第一个值得注意的是：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217014336443.png" alt="image-20240217014336443"></p>
+<p>license，许可证。这个部分我会放在这一篇最后介绍，知识产权的保护在开源社区中依然重要，但很多人可能并没有意识到这一点。</p>
+<p>除了证书外，先看Readme：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217014554891.png" alt="image-20240217014554891"></p>
+<p>这种star特别多的仓库，往往都维护的比较好，文档比较齐全。大多数项目的Readme都写的很好，通过这个部分就能根据需求判断是否值得我们去参考学习这个项目了。</p>
+<p>我们看到，需求与我们大体一致。那这个时候需要进一步在Readme里面关注：</p>
+<p>如何安装与运行测试、使用的是什么方法。前者是方便我们在自己的数据样例上测试效果，后者是便于我们了解这个项目采用了什么解决方案，为我们自己的项目提供一些模型选型方向。</p>
+<p>阅读一遍Readme，我们大概知道了这个项目能做到什么，怎么拿来测试呢？一般来说，我们会直接克隆这个项目的仓库到本地，但是这一步需要配置git工具<a target="_blank" rel="noopener" href="https://git-scm.com/downloads%E3%80%82">https://git-scm.com/downloads。</a></p>
+<p>我建议根据官方文档或者找教程，学习git工具的使用，尤其是最基本的克隆。但如果时间紧张，要尝试很多项目仓库，没学过git管理项目的话，直接点这里：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217015420926.png" alt="image-20240217015420926"></p>
+<p>下载zip文件，解压。</p>
+<p>解压出来之后，在IDE里面打开项目。再根据我们前面说过的，为每个项目创建一个虚拟环境，根据Readme里安装步骤进行配置。</p>
+<p><em>这里要提一下的是，并不是每个项目都会友好地告诉你怎么配置他自己项目的环境，但绝大多数项目都会有requirements.txt这个文件，你先建好虚拟环境并且激活之后，pip install -r requirements.txt 一般就可以，后面运行项目的时候遇到问题再补充安装一些库即可。还有一种情况，就是没有requirements.txt，但是有environment.yml(也可能是别的名字，但是yml作为后缀)这种文件，这种可能是conda直接新建虚拟环境可以用到的配置文件，conda env create -f environment.yml 一般就可以。</em></p>
+<p>有个我个人的小习惯：对github熟练一些之后，其实不一定要克隆到本地再去阅读代码，可以直接在项目的页面点击键盘上的”.”键，会召唤出github的在线IDE平台：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217020255114.png" alt="image-20240217020255114"></p>
+<p>（加载中）</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217020340734.png" alt="image-20240217020340734"></p>
+<p>就出现了在线IDE，依然可以使用跳转等等，直接阅读代码。但我不建议在线上测试运行，可以先这样看看代码结构。</p>
+<h3 id="代码阅读"><a href="#代码阅读" class="headerlink" title="代码阅读"></a>代码阅读</h3><p>只针对真正的初学者，阅读ML、DL相关项目代码，我的一些小经验。</p>
+<p>首先，一般来说Readme里面，关于运行测试的部分就相对于告诉了你项目的入口在哪里，比如这个项目就在这里：</p>
+<img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217020647521.png">
+
+<p>看到这，我们就知道，哦，项目的入口在src目录下的main.py。点开一看：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217020821736.png" alt="image-20240217020821736"></p>
+<p>还真有嘿！</p>
+<p>直接进去，找到整个代码文件运行起来的<strong>入口</strong>：主函数。（默认Python基本语法都了解了，函数定义的语法也了解了，有需要的话，也可以专门出一期在这个系列里，关于Python有哪些需要优先掌握的知识。）</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217020903151.png" alt="image-20240217020903151"></p>
+<p>也就是这里的main。</p>
+<p>找到这里其实就轻松多了，Control+点击main()，转到main函数定义的部分：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217021114868.png" alt="image-20240217021114868"></p>
+<p>在这里，然后就一步一步阅读下去。对于ML与DL项目，我建议刚开始看的时候，不要太纠结细节，比如</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217021200475.png" alt="image-20240217021200475"></p>
+<p>这是什么东西呀，为什么要这样做呀什么的，先把整体逻辑看清楚。上面这一部分的整体逻辑就是：</p>
+<p>先加载一些参数（arguments），然后判断一下是训练（train）还是验证（validate），训练的话就加载一下数据集（Dataloader），初始化模型（model），调用训练用到的函数。验证的话也是类似。这个流程大体先弄清楚，再一个一个点进去看，为什么这样写、这样做。</p>
+<p>现在的大家是幸运的，有AI帮助读代码。不需要多SOTA的助手，不需要多漂亮的提示词，Chatgpt或者Bing在目前我们<strong>入门级别的项目</strong>就基本上足够了，能把一些代码的意义说的八九不离十。比如我这样问：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217021734364.png" alt="image-20240217021734364"></p>
+<p>它答：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217021813867.png" alt="image-20240217021813867"></p>
+<p>了解完基本逻辑，我们ML、DL项目最关心的几个内容就是：</p>
+<p>数据加载、模型设计、训练。</p>
+<p>对应到这里正好就是：</p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217022141453.png" alt="image-20240217022141453"></p>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217022151522.png" alt="image-20240217022151522"></p>
+<p>代码里有关数据加载、模型、训练的部分是最值得我们刚入手的时候学习的。因为这些是组成我们自己这样一个项目的最基本的模块。</p>
+<p>一个个转进去看，看数据加载是怎么实现的，模型是怎么写的，训练是怎么组织设计的。</p>
+<p><em>这些内容展开会很详细冗长，我主要分享一下思路：</em></p>
+<p><em>数据加载部分，主要关注：对于这个项目的数据，它做了哪些预处理，我自己的项目的数据需不需要预处理？它怎么实现数据集里采样数据给训练和验证用？</em></p>
+<p><em>模型部分，主要关注：用的是什么框架写的（Pytorch、TensorFlow等等）？模型的基本模块有哪些（一般在init里）？模型怎么堆砌这些模块？数据进来之后，是怎么在模型里面进行一步一步运算的？（这里就是我更喜欢Pytorch的原因，整个流程更加清晰。）</em></p>
+<p><em>训练部分，主要关注：数据在哪里喂给模型的？损失函数是什么？超参数在哪里传进去的？如果我自己的模型要训练，是不是也要按照这个格式来写，对我有没有参考价值？</em></p>
+<p>其实，我个人最喜欢的方式，就是先把项目运行起来，跑通之后，再在我没看懂的地方打上print，打印出结果看看是什么样的，来进一步理解。其实debug也可以，但我更喜欢打印。</p>
+<h3 id="Bugs"><a href="#Bugs" class="headerlink" title="Bugs"></a>Bugs</h3><p>毫无疑问，第一次运行起来这些项目代码，绝对不可能顺顺利利。</p>
+<p>我个人刚开始接触的时候，大抵遇到的bug可以这样分类：</p>
+<ul>
+<li>安装问题，报错主要跟某个安装包有关，比如某某安装包没有某某函数，这种大概率是没装对版本，或者是装错包了。</li>
+<li>框架问题，TensorFlow就经常因为版本对不齐而抽风。</li>
+<li>自己的问题，数据没放好位置，或者运行的时候有哪些参数没设置好等等。</li>
+<li>项目本身的问题，严格按照Readme里面的要求进行，使用了一样的数据，但报错或者结果不一致，可以去issue里查看有没有类似问题，或者是提出一个issue来提问（对于新手可能有点过了，因为可能是自己的问题，刚入门还是以搜索为主）：</li>
+</ul>
+<p><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/image-20240217023701694.png" alt="image-20240217023701694"></p>
+<p>但Bug是无情的，每个哈姆雷特都有自己的Bug，善用搜索引擎，善于自我批评与自我革命。很多次我都以为是别人的问题，到头来全是我的问题。</p>
+<h2 id="知识产权"><a href="#知识产权" class="headerlink" title="知识产权"></a>知识产权</h2><p>在Github上，找到了不错的项目或者轮子，希望能用到自己的项目里，需要注意什么？</p>
+<p>举个例子，如果你使用了某个开源项目，并且做了修改，但是修改后的代码没有开源，那么有可能会违反许可证协议。所以一定要注意，虽然我们的项目可能并没有任何影响力，但是保护他人的知识产权，就是保护我们自己的开源环境。</p>
+<p>是真的存在因为违反开源协议被告上法庭的事件，我们作为开源社区的一份子，权利和义务都要抓住。</p>
+<p>可以参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shenStudy/p/17744662.html">https://www.cnblogs.com/shenStudy/p/17744662.html</a> 查看许可证的区别，里面提到的网站：<a target="_blank" rel="noopener" href="https://choosealicense.com/">https://choosealicense.com/</a> 非常实用。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这一篇主要介绍了关于轮子的问题，与刚入门读项目的思路。讲的不全也不多，只是随想随录。</p>
+<p>每次都是凌晨撰写，脑袋晕晕的，有任何问题请随意指正。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:1838040569@qq.com">Eric Miao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/02/15/github/">http://example.com/2024/02/15/github/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Gimdong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CS-X/">CS+X</a></div><div class="post_share"><div class="social-share" data-image="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/02/07/management/"><img class="next-cover" src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">“CS+X”-预备</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/27/intro/" title="“CS+X”引入与小想法"><img class="cover" src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-27</div><div class="title">“CS+X”引入与小想法</div></div></a></div><div><a href="/2024/02/07/management/" title="“CS+X”-预备"><img class="cover" src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-07</div><div class="title">“CS+X”-预备</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Eric Miao</div><div class="author-info__description">我们到了一个不断说再见的时候</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ERICMIAO0817"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ERICMIAO0817" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1838040569@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">To think different.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%9CCS-X%E2%80%9D-%E5%85%B3%E4%BA%8E%E2%80%9C%E8%BD%AE%E5%AD%90%E2%80%9D"><span class="toc-number">1.</span> <span class="toc-text">“CS+X”-关于“轮子”</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E5%BE%85%E8%BD%AE%E5%AD%90"><span class="toc-number">1.1.</span> <span class="toc-text">*看待轮子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.</span> <span class="toc-text">如何判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">常用的一些库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E5%AD%90%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83%EF%BC%8C%E9%A1%B9%E7%9B%AE%E5%91%A2%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">轮子可以参考，项目呢？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github"><span class="toc-number">1.4.1.</span> <span class="toc-text">Github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB"><span class="toc-number">1.4.2.</span> <span class="toc-text">代码阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bugs"><span class="toc-number">1.4.3.</span> <span class="toc-text">Bugs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83"><span class="toc-number">1.5.</span> <span class="toc-text">知识产权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/02/15/github/" title="”CS+X“-关于“轮子”"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="”CS+X“-关于“轮子”"/></a><div class="content"><a class="title" href="/2024/02/15/github/" title="”CS+X“-关于“轮子”">”CS+X“-关于“轮子”</a><time datetime="2024-02-14T17:28:47.000Z" title="发表于 2024-02-15 01:28:47">2024-02-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/02/07/management/" title="“CS+X”-预备"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="“CS+X”-预备"/></a><div class="content"><a class="title" href="/2024/02/07/management/" title="“CS+X”-预备">“CS+X”-预备</a><time datetime="2024-02-06T17:48:43.000Z" title="发表于 2024-02-07 01:48:43">2024-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/27/intro/" title="“CS+X”引入与小想法"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-exrqrr_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="“CS+X”引入与小想法"/></a><div class="content"><a class="title" href="/2024/01/27/intro/" title="“CS+X”引入与小想法">“CS+X”引入与小想法</a><time datetime="2024-01-26T17:48:43.000Z" title="发表于 2024-01-27 01:48:43">2024-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="Celseq2数据处理"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-9m6w7k_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Celseq2数据处理"/></a><div class="content"><a class="title" href="/2023/10/23/Celseq2%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="Celseq2数据处理">Celseq2数据处理</a><time datetime="2023-10-22T17:48:43.000Z" title="发表于 2023-10-23 01:48:43">2023-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/16/water/" title="如何看待目标"><img src="https://4myblog.oss-cn-beijing.aliyuncs.com/img/wallhaven-76389o_1920x1080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何看待目标"/></a><div class="content"><a class="title" href="/2022/12/16/water/" title="如何看待目标">如何看待目标</a><time datetime="2022-12-16T10:00:02.000Z" title="发表于 2022-12-16 18:00:02">2022-12-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Eric Miao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://ericcsu.top/',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://ericcsu.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '5057c18799d5f3ee0784',
+      clientSecret: 'f462783e432c8e05420145bf94a09eb2688a61fd',
+      repo: 'ERICMIAO0817.github.io',
+      owner: 'ERICMIAO0817',
+      admin: ['ERICMIAO0817'],
+      id: 'af4c155bd5dfc9eeb5ddee4cdbb343ab',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Twikoo' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
